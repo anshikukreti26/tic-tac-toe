@@ -40,6 +40,7 @@ const disableBoxes = () => {
 const enableBoxes = () => {
     for (let box of boxes) {
         box.disabled=false;
+        box.innerText="";
     }
 }
 
@@ -65,4 +66,9 @@ const checkWinner = () => {
 
 const resetGame = () => {
     turnO = true;
+    enableBoxes();
+    msgContainer.classList.add("hide");
 }
+
+newGameBtn.addEventListener("click", resetGame);
+resetBtn.addEventListener("click", resetGame);
